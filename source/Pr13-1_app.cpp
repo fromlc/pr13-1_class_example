@@ -19,6 +19,8 @@ using std::endl;
 namespace funcs {
     //----------------------------------------------------------------------
     // Display the rectangle's data
+    // 
+    // use call by value for now
     //----------------------------------------------------------------------
     void displayDimensions(Rectangle r) {
         cout << "Here is the rectangle's data:\n";
