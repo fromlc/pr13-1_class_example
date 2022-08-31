@@ -14,6 +14,21 @@ using std::cout;
 using std::endl;
 
 //----------------------------------------------------------------------
+// put utility functions in separate namespace
+//----------------------------------------------------------------------
+namespace funcs {
+    //----------------------------------------------------------------------
+    // Display the rectangle's data
+    //----------------------------------------------------------------------
+    void displayDimensions(Rectangle r) {
+        cout << "Here is the rectangle's data:\n";
+        cout << "Width: " << r.getWidth() << endl;
+        cout << "Length: " << r.getLength() << endl;
+        cout << "Area: " << r.getArea() << endl;
+    }
+}
+
+//----------------------------------------------------------------------
 // entry point
 //----------------------------------------------------------------------
 int main()
@@ -33,11 +48,7 @@ int main()
     box.setWidth(rectWidth);
     box.setLength(rectLength);
 
-    // Display the rectangle's data
-    cout << "Here is the rectangle's data:\n";
-    cout << "Width: " << box.getWidth() << endl;
-    cout << "Length: " << box.getLength() << endl;
-    cout << "Area: " << box.getArea() << endl;
- 
+    funcs::displayDimensions(box);
+
     return 0;
 }
