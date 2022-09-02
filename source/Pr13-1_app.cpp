@@ -6,17 +6,24 @@
 // App code for Program 13-1 on pp. 736-737
 //----------------------------------------------------------------------
 #include <iostream>
+#include <fstream>
+#include <vector>
 
 #include "Rectangle.h"
+
+constexpr int FILE_ERROR = 1;
 
 using std::cin;
 using std::cout;
 using std::endl;
+using std::ifstream;
+using std::string;
+using std::vector;
 
 //----------------------------------------------------------------------
 // put utility functions in separate namespace
 //----------------------------------------------------------------------
-namespace funcs {
+namespace f {
     //----------------------------------------------------------------------
     // Display the rectangle's data
     // 
@@ -35,6 +42,30 @@ namespace funcs {
 //----------------------------------------------------------------------
 int main()
 {
+    string s = "t.txt";
+    ifstream ifs;
+    ifs.open(s);
+
+    if (!ifs.is_open()) {
+        cout << "Error! " << s;
+    }
+
+
+    vector<double> vec;
+    vec.reserve(60);
+
+    int i = 0;
+    double data = 5;
+    for (int i = 0; i < 80; i++) {
+        vec.push_back(data);
+
+    }
+
+
+
+    ifs.close();
+
+
     Rectangle box;     // Define an instance of the Rectangle class
     double rectWidth;  // Local variable for width
     double rectLength; // Local variable for length
@@ -50,7 +81,7 @@ int main()
     box.setWidth(rectWidth);
     box.setLength(rectLength);
 
-    funcs::displayDimensions(box);
+    f::displayDimensions(box);
 
     return 0;
 }
